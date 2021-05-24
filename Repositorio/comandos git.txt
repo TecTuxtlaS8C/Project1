@@ -1,0 +1,9 @@
+git init
+mkdir Repositorio
+cd Repositorio
+mkdir Proyecto1
+cd Proyecto1
+git clone https://github.com/TecTuxtlaS8C/Project1.git
+git remote add origin https://github.com/TecTuxtlaS8C/Project1.git
+git commit -m version1
+git push origin 
