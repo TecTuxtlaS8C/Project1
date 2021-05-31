@@ -17,7 +17,7 @@
                     <div class="card-body">
                         <h4 class="card-title">{{$producto->nombre}}</h4>
                         <p class="card-text">{{$producto->descripcion}}</p>
-                        <a href="/Productos" class="btn btn-primary">Detalles</a>
+                        <a href="#" class="btn btn-primary">Detalles</a>
                     </div>
                 </div>          
             </div>

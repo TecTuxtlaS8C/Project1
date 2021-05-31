@@ -31,6 +31,12 @@ class AutenticarControler extends Controller
                                 return redirect('/Contador');
                             else return redirect('/autenticar');
                             break;
+
+             case 'invitado':
+                            if($request->input('contraseña')=="invitado")
+                                    return redirect('/Anonimo');
+                            else return redirect('/autenticar');
+                            break;
             default:
                 return redirect('/autenticar')->with('error','usuario no registrado');
                 break;

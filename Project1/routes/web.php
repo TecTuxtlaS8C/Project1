@@ -16,11 +16,21 @@ Route::get('/', function () {
   return view('supervisor.Bienvenido',compact('categorias'));
 
 });
+Route::get('/Anonimo', function () {
+    $categorias = Categoria::all();
+
+  return view('Invitado.Invitado',compact('categorias'));
+
+});
 Route::get('/Invitado', function () {
     $categorias = Categoria::all();
 
-  return view('supervisor.Welcome',compact('categorias'));
+  return view('Invitado.Welcome',compact('categorias'));
 
+});
+Route::get('/InvitadoProduct', function () {
+    $productos = Producto::all();
+    return view('Invitado.Prod',compact('productos'));
 });
 Route::get('/preview', function () {
     $productos = Producto::all();
