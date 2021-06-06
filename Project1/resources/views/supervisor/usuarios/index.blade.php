@@ -1,5 +1,19 @@
 @extends('layouts.user')
 @section('contentt')
+<a href="/supervisor" class="btn btn-primary" role="button" style="float:right">
+    <button>Regresar</button>
+</a>
+<nav class="navbar navbar-light float-right">
+  <form class="form-inline">
+
+    <input name="buscarpor" class="form-control mr-sm-2" type="search" placeholder="Buscar por nombre" aria-label="Search">
+
+    <input name="buscarporrol" class="form-control mr-sm-2" type="search" placeholder="Buscar por rol" aria-label="Search">
+    
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+  </form>
+</nav>
+
 <a href="Usuarios/create">Agregar Nuevo Usuario</a>
 <table border="1">
 <thead>

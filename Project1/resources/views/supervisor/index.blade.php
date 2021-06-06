@@ -48,7 +48,7 @@
   <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <input class="form-control form-control-dark w-100" type="text" placeholder="Buscar" aria-label="Search">
+  <!--input class="form-control form-control-dark w-100" type="text" placeholder="Buscar" aria-label="Search"-->
   <ul class="navbar-nav px-3">
     <li class="nav-item text-nowrap">
       <a class="nav-link" href="{{ route('login.destroy') }}">Salir</a>
@@ -76,13 +76,13 @@
           <li class="nav-item">
             <a class="nav-link" href="/Productos">
               <span data-feather="shopping-cart"></span>
-              Products
+              Productos
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/Usuarios">
               <span data-feather="users"></span>
-              Customers
+              Usuarios
             </a>
           </li>
          
@@ -106,6 +106,7 @@
       </div>
 
       <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+      
 
        <script src="https://getbootstrap.com/docs/5.0/dist/js/bootstrap.bundle.min.js" ></script>
 

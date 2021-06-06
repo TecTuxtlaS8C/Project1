@@ -39,6 +39,7 @@
         <div class="menu">
             <ul>
                 <li><a href="/Categorias">Categorias</a></li>
+
              </ul>
         </div>
                 <div class="contenido">

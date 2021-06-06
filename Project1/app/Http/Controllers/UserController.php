@@ -11,9 +11,14 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $users = User::all();
+        $nombre = $request->get('buscarpor');
+        
+        $roles = $request->get('buscarporrol');
+
+        $users = User::nombres($nombre)->roles($roles)->paginate();
         return view('supervisor.usuarios.index',compact('users'));
     }
 

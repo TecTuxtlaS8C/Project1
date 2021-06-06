@@ -2,7 +2,7 @@
 
 @section('content')
 
-<form action="/Categorias" method="post">
+<form action="/Categorias"  method="post">
     @csrf
     @method('POST')
     Nombre de la seccion:

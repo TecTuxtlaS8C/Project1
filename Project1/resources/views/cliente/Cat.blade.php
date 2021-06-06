@@ -13,7 +13,7 @@
         @forelse ($categorias as $categoria)    
             <div class="col-md">        
                 <div class="card">
-                    <img class="card-img-top" src="Imagenes/Electronica/sony.jpg">       
+                    <img class="card-img-top">{{$categoria->imagen}}</img>    
                     <div class="card-body">
                         <h4 class="card-title">{{$categoria->nombre}}</h4>
                         <p class="card-text">{{$categoria->descripcion}}</p>

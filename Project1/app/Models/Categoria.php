@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Categoria extends Model
 {
     use HasFactory;
+    public function scopeNombres($query, $nombres) {
+    	if ($nombres) 
+        {
+    		return $query->where('nombre','like',"%$nombres%");
+    	}
+
+    }
 }

@@ -11,9 +11,11 @@ class ProductosControler extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $productos = Producto::all();
+        $nombre = $request->get('buscarpor');
+        $productos = Producto::nombres($nombre)->paginate();
         return view('admin.Productos.index',compact('productos'));
     }
 

@@ -11,9 +11,11 @@ class CategoriasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $categorias = Categoria::all();
+        $nombre = $request->get('buscarpor');
+        $categorias = Categoria::nombres($nombre)->paginate();
         return view('admin.Categorias.index',compact('categorias'));
     }
 
