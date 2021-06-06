@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\Producto;
 use Illuminate\Http\Request;
 
@@ -15,7 +14,7 @@ class ProductosControler extends Controller
     public function index()
     {
         $productos = Producto::all();
-        return view('cliente.Productos.index',compact('productos'));
+        return view('admin.Productos.index',compact('productos'));
     }
 
     /**
@@ -25,7 +24,7 @@ class ProductosControler extends Controller
      */
     public function create()
     {
-        return view('cliente.Productos.create');
+        return view('admin.Productos.create');
     }
 
     /**
@@ -54,8 +53,8 @@ class ProductosControler extends Controller
     public function show($id)
     {
         $producto = Producto::find($id);
-       // $seccion =  Producto::mostrar($id);
-        return view('cliente.Productos.show', compact('producto'));
+        // $seccion =  Producto::mostrar($id);
+         return view('admin.Productos.show', compact('producto'));
     }
 
     /**
@@ -68,7 +67,7 @@ class ProductosControler extends Controller
     {
         $producto = Producto::find($id);
         //$seccion = Producto::mostrar($id);
-        return view('cliente.Productos.edit', compact('producto'));
+        return view('admin.Productos.edit', compact('producto'));
     }
 
     /**

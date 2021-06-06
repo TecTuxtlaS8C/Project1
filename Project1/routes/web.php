@@ -1,73 +1,77 @@
 <?php
-use App\Models\Categoria;
-use App\Models\Producto;
-use App\Models\Usuario;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Session;
-/*
-|--------------------------------------------------------------------------|
-| Web Routes                                                               |
-|--------------------------------------------------------------------------|
-*/
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\SessionsController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\ContadorController;
+use App\Http\Controllers\SupervisorController;
+use App\Models\Producto;
+use App\Models\Categoria;
 
 Route::get('/', function () {
-    $categorias = Categoria::all();
+    return view('home');
+})->middleware('auth');
 
-  return view('supervisor.Bienvenido',compact('categorias'));
+Route::get('/register', [RegisterController::class, 'create'])
+    ->middleware('guest')
+    ->name('register.index');
 
-});
-Route::get('/Anonimo', function () {
-    $categorias = Categoria::all();
+Route::post('/register', [RegisterController::class, 'store'])
+    ->name('register.store');
 
-  return view('Invitado.Invitado',compact('categorias'));
 
-});
-Route::get('/Invitado', function () {
-    $categorias = Categoria::all();
 
-  return view('Invitado.Welcome',compact('categorias'));
+Route::get('/login', [SessionsController::class, 'create'])
+    ->middleware('guest')
+    ->name('login.index');
 
-});
-Route::get('/InvitadoProduct', function () {
+Route::post('/login', [SessionsController::class, 'store'])
+    ->name('login.store');
+
+Route::get('/logout', [SessionsController::class, 'destroy'])
+    ->middleware('auth')
+    ->name('login.destroy');
+
+
+Route::get('/admin', [AdminController::class, 'index'])
+    ->middleware('auth.admin')
+    ->name('admin.index');
+
+Route::get('/cliente', [ClienteController::class, 'vistacliente'])
+    ->middleware('auth.cliente')
+    ->name('cliente.index');
+
+Route::get('/contador', [ContadorController::class, 'vistacontador'])
+    ->middleware('auth.contador')
+    ->name('contador.index');
+
+
+Route::get('/supervisor', [SupervisorController::class, 'vistasupervisor'])
+    ->middleware('auth.supervisor')
+    ->name('supervisor.index');
+////
+Route::get('/ClienteProduct', function () {
     $productos = Producto::all();
-    return view('Invitado.Prod',compact('productos'));
+    return view('cliente.Prod',compact('productos'));
 });
-Route::get('/preview', function () {
-    $productos = Producto::all();
-    return view('cliente.w',compact('productos'));
-});
-Route::get('/user', function () {
-    $usuarios = Usuario::all();
-    return view('supervisor.we',compact('usuarios'));
-});
+Route::get('/ClienteCat', function () {
+    $categorias = Categoria::all();
 
-Route::get('autenticar', function () {
-    return view('autenticar');
-});
-Route::get('tablero', function () {
-    return view('supervisor.tablero');
-});
-Route::get('/Apat', function () {
-    return view('Apat');
-});
+  return view('cliente.Cat',compact('categorias'));
 
-Route::get('/Contador', function () {
-    return view('Contador.contador');
 });
 
 
-Route::post('validar','AutenticarControler@validar');
-Route::get('listar_por_categoria/{categoria_id}','BuscarController@listar_por');
-Route::get('listar_por_producto/{prod_id}','BuscarController@listar_por_prod');
-//////////////////////////////////////////////////////////////
-Route::get('Categorias','SegundoControlador@index');
-Route::post('Categorias','SegundoControlador@store');
-Route::get('Categorias/create','SegundoControlador@create');
-Route::get('Categorias/{categoria}','SegundoControlador@show');
-Route::put('Categorias/{categoria}','SegundoControlador@update');
-Route::delete('Categorias/{categoria}','SegundoControlador@destroy');
-Route::get('Categorias/{categoria}/edit','SegundoControlador@edit');
-//////////////////////////////////////////////////////////////////
+///
+Route::get('Categorias','CategoriasController@index');
+Route::post('Categorias','CategoriasController@store');
+Route::get('Categorias/create','CategoriasController@create');
+Route::get('Categorias/{categoria}','CategoriasController@show');
+Route::put('Categorias/{categoria}','CategoriasController@update');
+Route::delete('Categorias/{categoria}','CategoriasController@destroy');
+Route::get('Categorias/{categoria}/edit','CategoriasController@edit');
+
 Route::get('Productos','ProductosControler@index');
 Route::post('Productos','ProductosControler@store');
 Route::get('Productos/create','ProductosControler@create');
@@ -75,13 +79,14 @@ Route::get('Productos/{producto}','ProductosControler@show');
 Route::put('Productos/{producto}','ProductosControler@update');
 Route::delete('Productos/{producto}','ProductosControler@destroy');
 Route::get('Productos/{producto}/edit','ProductosControler@edit');
-///////////////////////////////////////////////////////////////////
-Route::get('Usuarios','usuarios@index');
-Route::post('Usuarios','usuarios@store');
-Route::get('Usuarios/create','usuarios@create');
-Route::get('Usuarios/{usuario}','usuarios@show');
-Route::put('Usuarios/{usuario}','usuarios@update');
-Route::delete('Usuarios/{usuario}','usuarios@destroy');
-Route::get('Usuarios/{usuario}/edit','usuarios@edit');
-
-
+//////
+Route::get('Usuarios','UserController@index');
+Route::post('Usuarios','UserController@store');
+Route::get('Usuarios/create','UserController@create');
+Route::get('Usuarios/{user}','UserController@show');
+Route::put('Usuarios/{user}','UserController@update');
+Route::delete('Usuarios/{user}','UserController@destroy');
+Route::get('Usuarios/{user}/edit','UserController@edit');
+//
+Route::get('Restablecer/{user}/edit','ResController@edit');
+Route::put('Restablecer/{user}','ResController@update');
