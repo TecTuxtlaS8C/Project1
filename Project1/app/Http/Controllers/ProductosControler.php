@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 use App\Models\Producto;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Storage;
+use App\Http\UploadedFiles;
 class ProductosControler extends Controller
 {
     /**
@@ -37,13 +38,26 @@ class ProductosControler extends Controller
      */
     public function store(Request $request)
     {
+        /*$producto = new Producto();
+        $producto->nombre = $request->input('nombre');
+        $producto->descripcion = $request->input('descripcion');       
+        $producto->save();
+        return redirect('/Productos');*/
         $producto = new Producto();
+        if($request->hasFile('imagen')){
+            $file = $request->file('imagen');
+            $destinationPath = 'imagen/imagen/';
+            $filename = time() . '-' . $file->getClientOriginalName();
+            $uploadSuccess = $request->file('imagen')->move($destinationPath, $filename);
+            $producto->imagen = $destinationPath . $filename;
+        }
         $producto->nombre = $request->input('nombre');
         $producto->descripcion = $request->input('descripcion');
+               
+        
+        
         $producto->save();
-        //$seccion = $request->input('seccion');
-        //Producto::agregar($seccion);
-        return redirect('/Productos');
+        return redirect('/ClienteProduct');
     }
 
     /**

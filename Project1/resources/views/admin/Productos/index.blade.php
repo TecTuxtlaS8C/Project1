@@ -1,4 +1,5 @@
 @extends('layouts.layout')
+<link rel="icon" href="https://getbootstrap.com/docs/5.0/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
 @section('contentt')
 <a href="/supervisor" class="btn btn-primary" role="button" style="float:right">
     <button>Regresar</button>
@@ -21,6 +22,7 @@
 			<tr>
 				<td>{{$producto->nombre}}</td>
 				<td>{{$producto->descripcion}}</td>
+
 				<td>
 					<a href="/Productos/{{$producto->id}}/edit">Editar</a>
 					<a href="/Productos/{{$producto->id}}">Mostrar</a>

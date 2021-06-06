@@ -1,6 +1,7 @@
 @extends('layouts.general')
-
+<link rel="icon" href="https://getbootstrap.com/docs/5.0/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
 @section('content')
+
 <a href="/supervisor" class="btn btn-primary" role="button" style="float:right">
     <button>Regresar</button>
 </a>
@@ -26,6 +27,7 @@
 				<td>
 					<a href="/Categorias/{{$categoria->id}}/edit">Editar</a>
 					<a href="/Categorias/{{$categoria->id}}">Mostrar</a>
+					<a href="/Productos">Ver Productos</a>
 					<form action="/Categorias/{{$categoria->id}}" method="post" style="display: inline;" onsubmit="return confirm('Desea Eliminar')">
 						@csrf
 						@method('DELETE')
