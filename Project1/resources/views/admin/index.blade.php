@@ -62,27 +62,21 @@
       <div class="position-sticky pt-3">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">
+            <a class="nav-link active" aria-current="page" href="/productosadminview">
               <span data-feather="home"></span>
               Dashboard
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/Categorias">
+            <a class="nav-link" href="/Categoriasadmin">
               <span data-feather="file"></span>
               Categorías
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/Productos">
+            <a class="nav-link" href="/Productosadmin">
               <span data-feather="shopping-cart"></span>
               Products
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="users"></span>
-              Customers
             </a>
           </li>
          

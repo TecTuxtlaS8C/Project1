@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 <link rel="icon" href="https://getbootstrap.com/docs/5.0/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
 @section('contentt')
-<a href="/supervisor" class="btn btn-primary" role="button" style="float:right">
+<a href="/admin" class="btn btn-primary" role="button" style="float:right">
     <button>Regresar</button>
 </a>
 <nav class="navbar navbar-light float-right">
@@ -11,7 +11,7 @@
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
   </form>
 </nav>
-<a href="/Productos/create" class="btn btn-primary" role="button" >
+<a href="/Productosadmin/create" class="btn btn-primary" role="button" >
     <button>Agregar Producto</button>
 </a>
 <!--a href="/Productos/create">Agregar</a-->
@@ -30,13 +30,8 @@
 				<td>{{$producto->categoria}}</td>
 
 				<td>
-					<a href="/Productos/{{$producto->id}}/edit">Editar</a>
-					<a href="/Productos/{{$producto->id}}">Mostrar</a>
-					<form action="/Productos/{{$producto->id}}" method="post" style="display: inline;" onsubmit="return confirm('Desea Eliminar')">
-						@csrf
-						@method('DELETE')
-						<button type="submit">Eliminar</button>
-					</form>
+					<a href="/Productosadmin/{{$producto->id}}/edit">Editar</a>
+					<a href="/Productosadmin/{{$producto->id}}">Mostrar</a>
 				</td>
 			</tr>
 		@empty

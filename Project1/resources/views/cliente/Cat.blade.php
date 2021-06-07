@@ -8,17 +8,25 @@
   <link rel="icon" href="https://getbootstrap.com/docs/5.0/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
 </head>
 <body>
+<a href="/cliente" class="btn btn-outline-success my-2 my-sm-0" role="button" style="float:left">
+Regresar
+</a>
+<nav class="navbar navbar-light float-right">
+  <form class="form-inline">
+	    <input name="buscarpor" class="form-control mr-sm-2" type="search" placeholder="Buscar por categoria" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+  </form>
+</nav>
   <div class="container">   
     <h1>vista de Categorias </h1>
     <div class="row">  
         @forelse ($categorias as $categoria)    
             <div class="col-md">        
                 <div class="card">
-                <img class="card-img-top" src="Imagenes/Computo/MAC.jpg">  
                     <div class="card-body">
                         <h4 class="card-title">{{$categoria->nombre}}</h4>
                         <p class="card-text">{{$categoria->descripcion}}</p>
-                        <a href="#" class="btn btn-primary">Detalles</a>
+                        <a href="/Productoscliente" class="btn btn-primary">Detalles</a>
                     </div>
                 </div>          
             </div>

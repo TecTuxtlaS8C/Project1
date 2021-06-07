@@ -16,4 +16,11 @@ class Producto extends Model
     	}
 
     }
+    public function scopeCategoria($query, $categoria) {
+    	if ($categoria) 
+        {
+    		return $query->where('categoria','like',"%$categoria%");
+    	}
+
+    }
 }

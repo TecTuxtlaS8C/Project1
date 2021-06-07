@@ -62,9 +62,9 @@
       <div class="position-sticky pt-3">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">
+            <a class="nav-link active" aria-current="page" href="/productos">
               <span data-feather="home"></span>
-              Dashboard
+              Vista de productos
             </a>
           </li>
           <li class="nav-item">

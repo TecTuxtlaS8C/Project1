@@ -2,7 +2,7 @@
 <link rel="icon" href="https://getbootstrap.com/docs/5.0/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
 @section('content')
 
-<a href="/supervisor" class="btn btn-primary" role="button" style="float:right">
+<a href="/admin" class="btn btn-primary" role="button" style="float:right">
     <button>Regresar</button>
 </a>
 <nav class="navbar navbar-light float-right">
@@ -11,7 +11,7 @@
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
   </form>
 </nav>
-<a href="/Categorias/create" class="btn btn-primary" role="button">
+<a href="/Categoriasadmin/create" class="btn btn-primary" role="button">
     <button>Agregar Categoria</button>
 </a>
 <table border="1">
@@ -26,14 +26,9 @@
 				<td>{{$categoria->nombre}}</td>
 				<td>{{$categoria->descripcion}}</td>
 				<td>
-					<a href="/Categorias/{{$categoria->id}}/edit">Editar</a>
-					<a href="/Categorias/{{$categoria->id}}">Mostrar</a>
-					<a href="/Productos">Ver Productos</a>
-					<form action="/Categorias/{{$categoria->id}}" method="post" style="display: inline;" onsubmit="return confirm('Desea Eliminar')">
-						@csrf
-						@method('DELETE')
-						<button type="submit">Eliminar</button>
-					</form>
+					<a href="/Categoriasadmin/{{$categoria->id}}/edit">Editar</a>
+					<a href="/Categoriasadmin/{{$categoria->id}}">Mostrar</a>
+					<a href="/Productosadmin">Ver Productos</a>
 				</td>
 			</tr>
 		@empty

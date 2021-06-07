@@ -10,9 +10,9 @@
     <link rel="stylesheet" 
     href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.1/tailwind.min.css">
   </head>
-  <body class="bg-gray-100 text-gray-800">
+  <body class="bg-blue-700 text-gray-800">
 
-    <nav class="flex py-5 bg-indigo-500 text-white">
+    <nav class="flex py-5 bg-red-900 text-white">
       <div class="w-1/2 px-12 mr-auto">
         <p class="text-2xl font-bold">Bruno Order</p>
       </div>
@@ -29,7 +29,7 @@
       @else
         <li class="mx-6">
           <a href="{{ route('login.index') }}" class="font-semibold 
-          hover:bg-indigo-700 py-3 px-4 rounded-md">Iniciar sesión</a>
+          border-2 border-white hover:bg-white hover:text-indigo-700 py-2 px-4 rounded-md">Iniciar sesión</a>
         </li>
         <li>
           <a href="{{ route('register.index') }}" class="font-semibold

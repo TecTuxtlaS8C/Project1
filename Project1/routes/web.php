@@ -61,24 +61,47 @@ Route::get('/ClienteCat', function () {
   return view('cliente.Cat',compact('categorias'));
 
 });
-
-
+Route::get('/productos', function () {
+    $productos = Producto::all();
+    return view('supervisor.productos',compact('productos'));
+});
+Route::get('/productosadminview', function () {
+    $productos = Producto::all();
+    return view('admin.Productos.productosadmin',compact('productos'));
+});
+Route::get('/carrito', function () {
+    return view('cliente.carrito');
+});
 ///
 Route::get('Categorias','CategoriasController@index');
+Route::get('Categoriasadmin','CategoriasController@indexadmin');
+Route::get('Categoriascliente','CategoriasController@indexcliente');
 Route::post('Categorias','CategoriasController@store');
+Route::post('Categoriasadmin','CategoriasController@storeadmin');
 Route::get('Categorias/create','CategoriasController@create');
+Route::get('Categoriasadmin/create','CategoriasController@createadmin');
 Route::get('Categorias/{categoria}','CategoriasController@show');
+Route::get('Categoriasadmin/{categoria}','CategoriasController@showadmin');
 Route::put('Categorias/{categoria}','CategoriasController@update');
+Route::put('Categoriasadmin/{categoria}','CategoriasController@updateadmin');
 Route::delete('Categorias/{categoria}','CategoriasController@destroy');
 Route::get('Categorias/{categoria}/edit','CategoriasController@edit');
+Route::get('Categoriasadmin/{categoria}/edit','CategoriasController@editadmin');
 
 Route::get('Productos','ProductosControler@index');
+Route::get('Productoscliente','ProductosControler@indexcliente');
+Route::get('Productosadmin','ProductosControler@indexadmin');
 Route::post('Productos','ProductosControler@store');
+Route::post('Productosadmin','ProductosControler@storeadmin');
 Route::get('Productos/create','ProductosControler@create');
+Route::get('Productosadmin/create','ProductosControler@createadmin');
 Route::get('Productos/{producto}','ProductosControler@show');
+Route::get('Productosadmin/{producto}','ProductosControler@showadmin');
 Route::put('Productos/{producto}','ProductosControler@update');
+Route::put('Productosadmin/{producto}','ProductosControler@updateadmin');
 Route::delete('Productos/{producto}','ProductosControler@destroy');
 Route::get('Productos/{producto}/edit','ProductosControler@edit');
+Route::get('Productosadmin/{producto}/edit','ProductosControler@editadmin');
 //////
 Route::get('Usuarios','UserController@index');
 Route::post('Usuarios','UserController@store');

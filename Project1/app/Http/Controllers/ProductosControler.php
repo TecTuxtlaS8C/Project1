@@ -15,9 +15,36 @@ class ProductosControler extends Controller
     public function index(Request $request)
     {
         $productos = Producto::all();
+        //$nombre = $request->get('buscarpor');
+       // $productos = Producto::nombres($nombre)->paginate();
+       $nombre = $request->get('buscarpor');
+        
+        $categoria = $request->get('buscarporcategoria');
+
+        $productos = Producto::nombres($nombre)->categoria($categoria)->paginate();
+        return view('admin.Productos.index',compact('productos'));
+    }
+    public function indexcliente(Request $request)
+    {
+        $productos = Producto::all();
         $nombre = $request->get('buscarpor');
         $productos = Producto::nombres($nombre)->paginate();
-        return view('admin.Productos.index',compact('productos'));
+
+
+        $productos = Producto::nombres($nombre)->paginate();
+        return view('cliente.Prod',compact('productos'));
+    }
+    public function indexadmin(Request $request)
+    {
+        $productos = Producto::all();
+        //$nombre = $request->get('buscarpor');
+       // $productos = Producto::nombres($nombre)->paginate();
+       $nombre = $request->get('buscarpor');
+        
+        $categoria = $request->get('buscarporcategoria');
+
+        $productos = Producto::nombres($nombre)->categoria($categoria)->paginate();
+        return view('admin.Productos.indexadmin',compact('productos'));
     }
 
     /**
@@ -29,7 +56,10 @@ class ProductosControler extends Controller
     {
         return view('admin.Productos.create');
     }
-
+    public function createadmin()
+    {
+        return view('admin.Productos.createadmin');
+    }
     /**
      * Store a newly created resource in storage.
      *
@@ -53,13 +83,37 @@ class ProductosControler extends Controller
         }
         $producto->nombre = $request->input('nombre');
         $producto->descripcion = $request->input('descripcion');
-               
-        
+        $producto->precio = $request->input('precio');
+        $producto->cantidad = $request->input('cantidad');    
+        $producto->categoria = $request->input('categoria');  
         
         $producto->save();
-        return redirect('/ClienteProduct');
+        return redirect('/productos');
     }
-
+    public function storeadmin(Request $request)
+    {
+        /*$producto = new Producto();
+        $producto->nombre = $request->input('nombre');
+        $producto->descripcion = $request->input('descripcion');       
+        $producto->save();
+        return redirect('/Productos');*/
+        $producto = new Producto();
+        if($request->hasFile('imagen')){
+            $file = $request->file('imagen');
+            $destinationPath = 'imagen/imagen/';
+            $filename = time() . '-' . $file->getClientOriginalName();
+            $uploadSuccess = $request->file('imagen')->move($destinationPath, $filename);
+            $producto->imagen = $destinationPath . $filename;
+        }
+        $producto->nombre = $request->input('nombre');
+        $producto->descripcion = $request->input('descripcion');
+        $producto->precio = $request->input('precio');
+        $producto->cantidad = $request->input('cantidad');    
+        $producto->categoria = $request->input('categoria');  
+        
+        $producto->save();
+        return redirect('/productosadminview');
+    }
     /**
      * Display the specified resource.
      *
@@ -71,6 +125,12 @@ class ProductosControler extends Controller
         $producto = Producto::find($id);
         // $seccion =  Producto::mostrar($id);
          return view('admin.Productos.show', compact('producto'));
+    }
+    public function showadmin($id)
+    {
+        $producto = Producto::find($id);
+        // $seccion =  Producto::mostrar($id);
+         return view('admin.Productos.showadmin', compact('producto'));
     }
 
     /**
@@ -85,6 +145,12 @@ class ProductosControler extends Controller
         //$seccion = Producto::mostrar($id);
         return view('admin.Productos.edit', compact('producto'));
     }
+    public function editadmin($id)
+    {
+        $producto = Producto::find($id);
+        //$seccion = Producto::mostrar($id);
+        return view('admin.Productos.editadmin', compact('producto'));
+    }
 
     /**
      * Update the specified resource in storage.
@@ -98,11 +164,26 @@ class ProductosControler extends Controller
         $producto = Producto::find($id);
         $producto->nombre = $request->input('nombre');
         $producto->descripcion = $request->input('descripcion');
+        $producto->precio = $request->input('precio');
+        $producto->cantidad = $request->input('cantidad');
         $producto->save();
        // $seccion = $request->input('seccion');
         //Producto::editar($id, $seccion);
         return redirect('/Productos');
     }
+    public function updateadmin(Request $request, $id)
+    {
+        $producto = Producto::find($id);
+        $producto->nombre = $request->input('nombre');
+        $producto->descripcion = $request->input('descripcion');
+        $producto->precio = $request->input('precio');
+        $producto->cantidad = $request->input('cantidad');
+        $producto->save();
+       // $seccion = $request->input('seccion');
+        //Producto::editar($id, $seccion);
+        return redirect('/Productosadmin');
+    }
+
 
     /**
      * Remove the specified resource from storage.
