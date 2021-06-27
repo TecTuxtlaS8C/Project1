@@ -21,6 +21,16 @@ class UserController extends Controller
         $users = User::nombres($nombre)->roles($roles)->paginate();
         return view('supervisor.usuarios.index',compact('users'));
     }
+    public function indexcontador(Request $request)
+    {
+        $users = User::all();
+        $nombre = $request->get('buscarpor');
+        
+        $roles = $request->get('buscarporrol');
+
+        $users = User::nombres($nombre)->roles($roles)->paginate();
+        return view('contador.index4',compact('users'));
+    }
 
     /**
      * Show the form for creating a new resource.

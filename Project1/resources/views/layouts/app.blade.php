@@ -10,9 +10,9 @@
     <link rel="stylesheet" 
     href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.1/tailwind.min.css">
   </head>
-  <body class="bg-blue-700 text-gray-800">
+  <body class="bg-white-700 text-gray-800">
 
-    <nav class="flex py-5 bg-red-900 text-white">
+    <nav class="flex py-5 bg-blue-900 text-white">
       <div class="w-1/2 px-12 mr-auto">
         <p class="text-2xl font-bold">Bruno Order</p>
       </div>

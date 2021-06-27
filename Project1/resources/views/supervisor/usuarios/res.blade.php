@@ -5,10 +5,11 @@
 <form action="/Restablecer/{{$user->id}}" method="post">
     @csrf
 	@method('PUT')
-    Restablecer Contraseña:
-    <input type="password" name="password" value="{{$user->password}}">
- 
-    <input type="submit" value="Actualizar">
+    <div class="form-group">
+        <label for="exampleFormControlInput1">Restablecer Contraseña:</label>
+        <input type="password"  class="form-control" name="password" value="{{$user->password}}">
+     </div>
+    <input type="submit" class="btn btn-primary" value="Actualizar">
 </form>
 
 @endsection

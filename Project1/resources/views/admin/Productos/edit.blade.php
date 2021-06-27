@@ -1,21 +1,26 @@
 @extends('layouts.layout')
 <link rel="icon" href="https://getbootstrap.com/docs/5.0/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
 @section('contentt')
-<a href="/Productos" class="btn btn-primary" role="button" style="float:right">
-    <button>Regresar</button>
-</a>
+
 <form action="/Productos/{{$producto->id}}" method="post">
     @csrf
 	@method('PUT')
-    Nombre de la seccion:<br>
-    <input type="text" name="nombre" value="{{$producto->nombre}}"><br>
-    Descripcion:<br>
-    <input type="text" name="descripcion" value="{{$producto->descripcion}}"><br>
-    Precio:<br>
-    <input type="text" name="precio" value="{{$producto->precio}}"><br>
-    Cantidad:<br>
-    <input type="text" name="cantidad" value="{{$producto->cantidad}}"><br>
-    <input type="submit" value="Editar">
+    <div class="form-group">
+    <label for="exampleFormControlInput1">Nombre del Producto</label>
+    <input type="text" class="form-control" name="nombre" value="{{$producto->nombre}}">
+    </div>
+    <div class="form-group">
+    <label for="exampleFormControlInput1">Descripción del Producto</label>
+    <input type="text" class="form-control" name="descripcion" value="{{$producto->descripcion}}">
+    <div class="form-group">
+    <label for="exampleFormControlInput1">Precio del Producto</label>
+    <input type="text" class="form-control" name="precio" value="{{$producto->precio}}">
+    </div>
+    <div class="form-group">
+    <label for="exampleFormControlInput1">Cantidad de Productos</label>
+    <input type="text" class="form-control" name="cantidad" value="{{$producto->cantidad}}">
+    </div>
+    <input type="submit" class="btn btn-primary" value="Editar">
 </form>
 
 @endsection

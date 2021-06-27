@@ -3,7 +3,7 @@
 <meta name="robots" content="follow"/>
 <html lang="es">
 <head>
-<title>Producto</title>
+<title>Pregunta</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -29,10 +29,10 @@
 <div class="header">
 <nav class="navbar navbar-dark bg-dark" aria-label="First navbar example">
     <div class="container-fluid">
-    <a class="navbar-brand" href="/supervisor">Tablero/supervisor</a>
+    <a class="navbar-brand" href="/admin">Tablero|Admin</a>
       <!--<a class="navbar-brand" href="/Productos/create">Agregar</a>
       <a class="navbar-brand" href="/Productos">Productos</a>-->
-      <a class="navbar-brand" href="/Productos">Regresar</a>
+      <a class="navbar-brand" href="/Preguntas">Anterior</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -40,10 +40,10 @@
       <div class="collapse navbar-collapse" id="navbarsExample01">
        <ul class="navbar-nav me-auto mb-2">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/Productos">Productos</a>
+            <a class="nav-link active" aria-current="page" href="/Productosadmin">Productos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/Categorias">Categorias</a>
+            <a class="nav-link active" aria-current="page" href="/Categoriasadmin">Categorias</a>
           </li>
           <!--li class="nav-item">
             <a class="nav-link active" href="/Productos/create">Agregar Producto</a>

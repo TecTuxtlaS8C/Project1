@@ -3,17 +3,28 @@
 @section('contentt')
 
 <form action="/Usuarios" method="post">
-    @csrf
-    @method('POST')
-    Nombre del Usuario:
-    <input type="text" name="name">
-    Rol:
-    <input type="text" name="role">
-    Correo:
-    <input type="email" name="email">
-    Contraseña:
-    <input type="password" name="password">
-    <input type="submit" value="Agregar">
+@csrf
+                    @method('POST')
+                    <div class="form-group">
+                    <label for="exampleFormControlInput1">Nombre del usuario</label>
+                    <input type="text" class="form-control" name="nombre">
+                    </div>
+                    <div class="form-group">
+                    <label for="exampleFormControlInput1">Rol</label>
+                    <input type="text" class="form-control" name="role">
+                    </div>
+                    <div class="form-group">
+                    <label for="exampleFormControlInput1">Correo</label>
+                    <input type="text" class="form-control" name="email">
+                    </div>
+                    <div class="form-group">
+                    <label for="exampleFormControlInput1">Contraseña</label>
+                    <input type="password"  class="form-control" name="password">
+                    </div>
+                  
+                   
+                    </div>
+                    <input type="submit" class="btn btn-primary" value="Agregar">
 </form>
 
 @endsection

@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="block mx-auto my-12 p-8 bg-gray-400 w-1/3 border border-gray-200 
+<div class="block mx-auto my-12 p-8 bg-blue-400 w-1/3 border border-gray-200 
 rounded-lg shadow-lg">
 
   <h1 class="text-3xl text-center font-bold">Mercado App</h1>
@@ -25,8 +25,8 @@ rounded-lg shadow-lg">
       text-red-600 p-2 my-2">* {{ $message }}</p>
     @enderror
 
-    <button type="submit" class="rounded-md bg-blue-500 w-full text-lg
-    text-black font-semibold p-2 my-3 hover:bg-red-600">Login</button>
+    <button type="submit" class="rounded-md bg-red-500 w-full text-lg
+    text-black font-semibold p-3 my-3 hover:bg-green-600">Iniciar sesión</button>
 
 
   </form>

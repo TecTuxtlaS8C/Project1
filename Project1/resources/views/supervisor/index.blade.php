@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Dashboard | Admin</title>
+    <title>Dashboard | Supervisor</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/dashboard/">
 
@@ -85,7 +85,12 @@
               Usuarios
             </a>
           </li>
-         
+          <li class="nav-item">
+            <a class="nav-link" href="/ventas">
+              <span data-feather="shopping-cart"></span>
+              ventas
+            </a>
+          </li>
 
         <ul class="nav flex-column mb-2">
        
@@ -96,16 +101,110 @@
 
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Tablero</h1>
-        <div class="btn-toolbar mb-2 mb-md-0">
-          <div class="btn-group me-2">
-            <button type="button" class="btn btn-sm btn-outline-secondary">Compartir</button>
-            <button type="button" class="btn btn-sm btn-outline-secondary">Exportar</button>
-          </div>
-        </div>
+        <div class="col-lg-9 right">
+            <div class="box shadow-sm rounded bg-white mb-3">
+                <div class="box-title border-bottom p-3">
+                    <h6 class="m-0">Actividades: </h6>
+                </div>
+                <div class="box-body p-0">
+                    <div class="p-3 d-flex align-items-center bg-light border-bottom osahan-post-header">
+                        <div class="dropdown-list-image mr-3">
+                            <img class="rounded-circle" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" />
+                        </div>
+                        <div class="font-weight-bold mr-3">
+                            <div class="text-truncate">Supervisor</div>
+                            <div class="small">Acceder a los usuarios registrados</div>
+                        </div>
+                        <span class="ml-auto mb-auto">
+                            <div class="btn-group">
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <button class="dropdown-item" type="button"><i class="mdi mdi-delete"></i> Delete</button>
+                                    <button class="dropdown-item" type="button"><i class="mdi mdi-close"></i> Turn Off</button>
+                                </div>
+                            </div>
+                            <br>
+                        </span>
+                    </div>
+                    <div class="p-3 d-flex align-items-center bg-light border-bottom osahan-post-header">
+                        <div class="dropdown-list-image mr-3">
+                            <img class="rounded-circle" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" />
+                        </div>
+                        <div class="font-weight-bold mr-3">
+                            <div class="text-truncate">Supervisor</div>
+                            <div class="small">Acceder a las ventas registrados</div>
+                        </div>
+                        <span class="ml-auto mb-auto">
+                            <div class="btn-group">
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <button class="dropdown-item" type="button"><i class="mdi mdi-delete"></i> Delete</button>
+                                    <button class="dropdown-item" type="button"><i class="mdi mdi-close"></i> Turn Off</button>
+                                </div>
+                            </div>
+                            <br>
+                        </span>
+                    </div>
+                    <div class="p-3 d-flex align-items-center bg-light border-bottom osahan-post-header">
+                        <div class="dropdown-list-image mr-3">
+                            <img class="rounded-circle" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" />
+                        </div>
+                        <div class="font-weight-bold mr-3">
+                            <div class="text-truncate">Supervisor</div>
+                            <div class="small">Acceder a los productos registrados</div>
+                        </div>
+                        <span class="ml-auto mb-auto">
+                            <div class="btn-group">
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <button class="dropdown-item" type="button"><i class="mdi mdi-delete"></i> Delete</button>
+                                    <button class="dropdown-item" type="button"><i class="mdi mdi-close"></i> Turn Off</button>
+                                </div>
+                            </div>
+                            <br>
+                        </span>
+                    </div>
+                    <div class="p-3 d-flex align-items-center bg-light border-bottom osahan-post-header">
+                        <div class="dropdown-list-image mr-3">
+                            <img class="rounded-circle" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" />
+                        </div>
+                        <div class="font-weight-bold mr-3">
+                            <div class="text-truncate">Supervisor</div>
+                            <div class="small">Acceder a las categorias registrados</div>
+                        </div>
+                        <span class="ml-auto mb-auto">
+                            <div class="btn-group">
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <button class="dropdown-item" type="button"><i class="mdi mdi-delete"></i> Delete</button>
+                                    <button class="dropdown-item" type="button"><i class="mdi mdi-close"></i> Turn Off</button>
+                                </div>
+                            </div>
+                            <br>
+                        </span>
+                    </div>
+                    
+                </div>
+            </div>
       </div>
+<style>
+body{
+    margin-top:20px;
+    background-color: #f0f2f5;
+}
+.dropdown-list-image {
+    position: relative;
+    height: 2.5rem;
+    width: 2.5rem;
+}
+.dropdown-list-image img {
+    height: 2.5rem;
+    width: 2.5rem;
+}
+.btn-light {
+    color: #2cdd9b;
+    background-color: #e5f7f0;
+    border-color: #d8f7eb;
+}
 
-      <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+</style>
+      <!--canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas-->
       
 
        <script src="https://getbootstrap.com/docs/5.0/dist/js/bootstrap.bundle.min.js" ></script>

@@ -20,6 +20,12 @@ class SessionsController extends Controller {
             ]);
 
         } 
+       /* if(auth()->attempt(request(['email'])) == true) {
+            return back()->withErrors([
+                'mess' => 'El correo electronico ya existe, verifique otro',
+            ]);
+
+        } */
      else {
 
             if(auth()->user()->role == 'admin') {

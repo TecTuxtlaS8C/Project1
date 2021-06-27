@@ -44,11 +44,11 @@
   <body>
     
 <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Mercado</a>
+  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Bruno Order</a>
   <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <input class="form-control form-control-dark w-100" type="text" placeholder="Buscar" aria-label="Search">
+ 
   <ul class="navbar-nav px-3">
     <li class="nav-item text-nowrap">
       <a class="nav-link" href="{{ route('login.destroy') }}">Salir</a>
@@ -56,50 +56,59 @@
   </ul>
 </header>
 
-<div class="container-fluid">
-  <div class="row">
-    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-      <div class="position-sticky pt-3">
-        <ul class="nav flex-column">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/productosadminview">
-              <span data-feather="home"></span>
-              Dashboard
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/Categoriasadmin">
-              <span data-feather="file"></span>
-              Categorías
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/Productosadmin">
-              <span data-feather="shopping-cart"></span>
-              Products
-            </a>
-          </li>
-         
-
-        <ul class="nav flex-column mb-2">
-       
-      
-        </ul>
-      </div>
-    </nav>
-
-    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Tablero</h1>
-        <div class="btn-toolbar mb-2 mb-md-0">
-          <div class="btn-group me-2">
-            <button type="button" class="btn btn-sm btn-outline-secondary">Compartir</button>
-            <button type="button" class="btn btn-sm btn-outline-secondary">Exportar</button>
+<main><br>
+  <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm border-secondary">
+          <div class="card-header py-3 text-white bg-secondary border-secondary">
+            <h4 class="my-0 fw-normal">Vista/Productos</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title"><small class="text-muted fw-light"></small></h1>
+            <p class="lead text-muted">Muestra la vista de productos que estan a la venta.</p>
+            <a href="/productosadminview" class="btn btn-secondary my-2">Vista/Productos</a>
           </div>
         </div>
       </div>
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm border-secondary">
+          <div class="card-header py-3 text-white bg-secondary border-secondary">
+            <h4 class="my-0 fw-normal">Categorias</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title"><small class="text-muted fw-light"></small></h1>
+            <p class="lead text-muted">Muestra las categorias de los productos que se tienen actualmente.</p>
+            <a href="/Categoriasadmin" class="btn btn-secondary my-2">Crud/Categorias</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm border-secondary">
+          <div class="card-header py-3 text-white bg-secondary border-secondary">
+            <h4 class="my-0 fw-normal">Productos</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title"><small class="text-muted fw-light"></small></h1>
+            <p class="lead text-muted">Muestra los productos que se tienen actualmente.</p>
+            <a href="/Productosadmin" class="btn btn-secondary my-2">Crud/Productos</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm border-secondary">
+          <div class="card-header py-3 text-white bg-secondary border-secondary">
+            <h4 class="my-0 fw-normal">Preguntas</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title"><small class="text-muted fw-light"></small></h1>
+            <p class="lead text-muted">Muestra las preguntas que los usuarios han realizado sobre algun producto.</p>
+            <a href="/Preguntas" class="btn btn-secondary my-2">Usuarios/Preguntas</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</main>
 
-      <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
 
        <script src="https://getbootstrap.com/docs/5.0/dist/js/bootstrap.bundle.min.js" ></script>
 

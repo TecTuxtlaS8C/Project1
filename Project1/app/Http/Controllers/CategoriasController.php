@@ -32,6 +32,13 @@ class CategoriasController extends Controller
         $categorias = Categoria::nombres($nombre)->paginate();
         return view('admin.Categorias.indexadmin',compact('categorias'));
     }
+    public function indexcontador(Request $request)
+    {
+        $categorias = Categoria::all();
+        $nombre = $request->get('buscarpor');
+        $categorias = Categoria::nombres($nombre)->paginate();
+        return view('contador.index1',compact('categorias'));
+    }
     /**
      * Show the form for creating a new resource.
      *

@@ -5,12 +5,16 @@
 <form action="/Usuarios/{{$user->id}}" method="post">
     @csrf
 	@method('PUT')
-    Nombre del Usuario:
-    <input type="text" name="name" value="{{$user->name}}">
-    <br>
-    Rol:
-    <input type="text" name="role" value="{{$user->role}}">
-    <input type="submit" value="Editar">
+    <div class="form-group">
+    <label for="exampleFormControlInput1">Nombre del usuario:</label>
+    <input type="text" class="form-control" name="name" value="{{$user->name}}">
+    </div>
+    <div class="form-group">
+    <label for="exampleFormControlInput1">Rol del Usuario:</label>
+    <input type="text" class="form-control" name="role" value="{{$user->role}}"><br>
+    <input type="submit" class="btn btn-primary" value="Editar">
+    
+    
 </form>
 
 @endsection

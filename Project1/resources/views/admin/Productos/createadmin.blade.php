@@ -1,9 +1,7 @@
-@extends('layouts.layout')
+@extends('layouts.admin')
 <link rel="icon" href="https://getbootstrap.com/docs/5.0/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
 @section('contentt')
-<a href="/admin" class="btn btn-primary" role="button" style="float:right">
-    <button>Regresar</button>
-</a>
+
 <form action="/Productosadmin" method="post" enctype="multipart/form-data"> 
                     
                     @csrf

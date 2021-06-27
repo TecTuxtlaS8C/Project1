@@ -11,7 +11,27 @@
     Regresar
 </a>
 <body>
-  <div class="container">   
+
+<div class="container">
+    <div class="row">
+      @forelse ($productos as $producto)
+      <div class="card" style="width: 18rem;">
+        <img src="{{asset($producto->imagen)}}" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <p class="card-text">
+          <h4 class="card-title">{{$producto->nombre}}</h4>
+          <p class="card-text">Descripcion: {{$producto->descripcion}}</p>
+          <p class="card-text">Precio: ${{$producto->precio}}.00</p>
+          <p class="card-text">Existencia: {{$producto->cantidad}} productos</p>
+          </p>
+        </div>
+      </div>
+      @empty
+      SIN PRODUCTOS REGISTRADOS
+      @endforelse
+    </div>
+  </div>
+  <!--div class="container">   
     <div class="row">  
         @forelse ($productos as $producto)    
             <div class="col-md">        
@@ -22,10 +42,8 @@
                         <p class="card-text">Descripcion: {{$producto->descripcion}}</p>
                         <p class="card-text">Precio: ${{$producto->precio}}</p>
                         <p class="card-text">Existencia: {{$producto->cantidad}} productos</p>
-                        <!--a href="#" class="btn btn-primary">Añadir</a-->
-                      
-                        
-                    </div>
+                                            
+                  </div>
                 </div>          
             </div>
         @empty
@@ -33,6 +51,6 @@
         @endforelse
     
     </div>
-  </div>
+</div-->
 </body>
 </html>
